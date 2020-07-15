@@ -6,9 +6,9 @@
 	    	<div class="container">
 				<div class="row d-flex">
 					<div class="col-xl-8 py-5 px-md-5">
-						<center>No topics yet</center>
+						{{-- <center>No topics yet</center> --}}
 	    				<div class="row pt-md-4">
-			    			{{-- <div class="col-md-12">
+			    			<div class="col-md-12">
 								<div class="blog-entry ftco-animate d-md-flex">
 									<a href="single.html" class="img img-2" style="background-image: url(images/image_1.jpg);"></a>
 									<div class="text text-2 pl-md-4">
@@ -24,7 +24,7 @@
 										<p><a href="#" class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a></p>
 									</div>
 								</div>
-							</div> --}}
+							</div>
 			    		</div><!-- END-->
 			    	
 			    	</div>
@@ -48,7 +48,7 @@
 
 	            <div class="sidebar-box ftco-animate">
 	              <h3 class="sidebar-heading">Popular Topics</h3>
-	              {{-- <div class="block-21 mb-4 d-flex">
+	              <div class="block-21 mb-4 d-flex">
 	                <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
 	                <div class="text">
 	                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control</a></h3>
@@ -58,7 +58,7 @@
 	                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
 	                  </div>
 	                </div>
-	              </div> --}}
+	              </div>
 	            </div>
 
 	          </div><!-- END COL -->

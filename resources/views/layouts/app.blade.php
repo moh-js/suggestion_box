@@ -39,10 +39,11 @@
         $segment_2 = Request::segment(2);
     @endphp
 
-	@auth
+  @auth
   <div id="colorlib-page">
     <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 <aside id="colorlib-aside" role="complementary" class="js-fullheight">
+  <h1 id="" class="mb-4"><a href="{{ url('/') }}">MUST <span>OSB </span></a></h1>
   <nav id="colorlib-main-menu" role="navigation">
     <ul>
       <li class="{{ $segment_1??'colorlib-active' }}"><a href="{{ url('/') }}">Home</a></li>
@@ -58,7 +59,7 @@
   </nav>
 
   <div class="colorlib-footer">
-    <h1 id="colorlib-logo" class="mb-4"><a href="{{ url('/') }}" style="background-image: url({{ asset('images/bg_1.jpg') }});">MUST <span>OSB </span></a></h1>
+    
     <div class="mb-4" style="height: 20px">
   
     </div>
