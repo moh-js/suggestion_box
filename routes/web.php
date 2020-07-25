@@ -15,4 +15,16 @@ Auth::routes(['register' => false]);
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::resource('category', 'CategoryController');
+Route::resource('category', 'CategoryController')->except([
+    'show'
+]);
+
+Route::resource('user', 'UsersController')->except([
+    'show'
+]);
+
+Route::resource('post', 'PostController')->except([
+
+]);
+
+Route::post('comment/{post}', 'CommentController@postComment')->name('post.comment');

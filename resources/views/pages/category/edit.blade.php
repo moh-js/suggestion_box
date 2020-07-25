@@ -29,7 +29,7 @@
                     </div>
         
                     <div class="form-group">
-                        <label for="people">Name</label>
+                        <label for="people">Responsible Person(s)</label>
                         <select name="people[]" id="people" multiple class="form-control @error('people') is-invalid @enderror">
                             @foreach (\App\Person::query()->orderBy('name', 'asc')->get() as $person)
                                 <option value="{{ $person->id }}" {{ old('people')?(collect(old('people'))->contains($person->id)?'selected':''):(collect($category->people)->contains($person->id)?'selected':'') }}>{{ $person->proper_name }}</option>

@@ -47,10 +47,10 @@
   <nav id="colorlib-main-menu" role="navigation">
     <ul>
       <li class="{{ $segment_1??'colorlib-active' }}"><a href="{{ url('/') }}">Home</a></li>
-      <li><a href="fashion.html">Users</a></li>
+      <li class="{{ $segment_1 == 'user'? 'colorlib-active':'' }}"><a href="{{ route('user.index') }}">Users</a></li>
       <li class="{{ $segment_1 == 'category'? 'colorlib-active':'' }}"><a href="{{ route('category.index') }}">Category</a></li>
-      <li class="{{ $segment_1 == 'post'? 'colorlib-active':'' }}"><a href="fashion.html">Post</a></li>
-      <li class="{{ $segment_1 == 'about'? 'colorlib-active':'' }}"><a href="about.html">About</a></li>
+      <li class="{{ $segment_1 == 'post'? 'colorlib-active':'' }}"><a href="{{ route('post.index') }}">Post</a></li>
+      <li class="{{ $segment_1 == 'about'? 'colorlib-active':'' }}"><a href="#">About</a></li>
       <li><a href="javascript:void(0)" onclick="$('#logout').submit()">Logout</a></li>
     </ul>
     <form action="{{ route('logout') }}" method="post" id="logout" hidden>

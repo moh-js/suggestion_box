@@ -15,7 +15,7 @@ class CategoryController extends Controller
     public function index()
     {
         return view('pages.category.index', [
-            'categories' => Category::all()
+            'categories' => Category::withTrashed()->get()
         ]);
     }
 
@@ -102,9 +102,18 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy($id)
     {
-        $category->delete();
-        return redirect()->route('category.index');
+        $category = Category::withTrashed()->where('id', $id)->first();
+
+        // Restore Deleted User 
+        if ($category->trashed()) {
+            $category->restore();
+        }
+        else {
+            $category->delete();
+        }
+
+        return back();
     }
 }

@@ -13,4 +13,9 @@ class Person extends Model
         return \title_case(str_replace('_', ' ', $this->name));
     }
 
+    public function user()
+    {
+        return $this->hasMany(User::class, 'area');
+    }
+
 }

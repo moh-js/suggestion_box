@@ -28,7 +28,7 @@
                     </div>
         
                     <div class="form-group">
-                        <label for="name">Name</label>
+                        <label for="name">Responsible Person(s)</label>
                         <select name="people[]" id="people" multiple class="form-control @error('people') is-invalid @enderror">
                             @foreach (\App\Person::query()->orderBy('name', 'asc')->get() as $person)
                                 <option value="{{ $person->id }}" {{ collect(old('people'))->contains($person->id)?'selected':'' }}>{{ $person->proper_name }}</option>

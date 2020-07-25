@@ -18,6 +18,15 @@ class UserTableSeeder extends Seeder
         Role::updateOrCreate([
             'name' => 'super-admin'
         ]);
+        Role::updateOrCreate([
+            'name' => 'staff'
+        ]);
+        Role::updateOrCreate([
+            'name' => 'student'
+        ]);
+        Role::updateOrCreate([
+            'name' => 'admin'
+        ]);
 
         User::updateOrCreate([
             'name' => 'Charles Kauta',

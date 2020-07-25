@@ -10,7 +10,7 @@
     <section class="ftco-section ftco-no-pt ftco-no-pb">
     <div class="container mt-5">
         <div class="mb-3">
-            <a href="{{ route('category.create') }}" class="btn btn-primary">Add Category</a>
+            <a href="{{ route('user.create') }}" class="btn btn-primary">Add User</a>
         </div>
         
         <table class="table table-sm table-bordered" id="table">
@@ -18,31 +18,30 @@
                 <tr>
                     <th>#</th>
                     <th>Name</th>
-                    <th>Responsible Persons</th>
+                    <th>E-Mail Address</th>
+                    <th>Responsible Area</th>
+                    <th>Role</th>
                     <th class="text-center">Action</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($categories as $key => $category)
+                @foreach ($users as $key => $user)
                     <tr>
                         <td>{{ ++$key }}</td>
-                        <td>{{ $category->name }}</td>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->email }}</td>
                         <td>
-                            @foreach ($category->people as $person)
-                                @php 
-                                    $person = \App\Person::find($person)->proper_name;
-                                @endphp
-                                <span class="badge badge-primary">{{ $person }}</span>
-                            @endforeach
+                            {{ $user->person->proper_name?? null }}
                         </td>
+                        <td>{{ title_case($user->getRoleNames()->first()) }}</td>
                         <td class="text-center">
-                            @if ($category->deleted_at)
+                            @if ($user->deleted_at)
                             <a href="javascript:void(0)" onclick="$('#form{{ $key }}').submit()" class="btn btn-danger btn-sm">Restore</a>
                             @else
-                            <a href="{{ route('category.edit', $category->id) }}" class="btn btn-info btn-sm">Edit</a>
+                            <a href="{{ route('user.edit', $user->id) }}" class="btn btn-info btn-sm">Edit</a>
                             <a href="javascript:void(0)" onclick="$('#form{{ $key }}').submit()" class="btn btn-danger btn-sm">Delete</a>
                             @endif
-                            <form action="{{ route('category.destroy', $category->id) }}" id="form{{ $key }}" method="post">
+                            <form action="{{ route('user.destroy', $user->id) }}" id="form{{ $key }}" method="post">
                                 @csrf
                                 @method('DELETE')
                             </form>
