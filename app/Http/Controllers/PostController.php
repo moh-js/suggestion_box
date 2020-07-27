@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('role:student')->only(['create', 'store']);
+    }
     /**
      * Display a listing of the resource.
      *

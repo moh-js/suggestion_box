@@ -14,4 +14,14 @@ class Category extends Model
     protected $casts = [
         'people' => 'array'
     ];
+
+    public function scopeHasPeople($query, $id)
+    {
+        return $query->where('people', 'like', "%\"{$id}\"%");
+    }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }

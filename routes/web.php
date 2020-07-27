@@ -14,14 +14,18 @@
 Auth::routes(['register' => false]);
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/my-posts', 'HomeController@myPosts')->name('my.post');
+Route::get('/public-posts', 'HomeController@publicPosts')->name('public.post');
 
 Route::resource('category', 'CategoryController')->except([
     'show'
-]);
+])
+->middleware('role:super-admin|admin');
 
 Route::resource('user', 'UsersController')->except([
     'show'
-]);
+])
+->middleware('role:super-admin|admin');
 
 Route::resource('post', 'PostController')->except([
 

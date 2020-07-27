@@ -70,36 +70,38 @@
 			    	</div>
 			<div class="col-xl-4 sidebar ftco-animate bg-light pt-5">
 	            <div class="sidebar-box pt-md-4">
-	              <form action="#" class="search-form">
+	              {{-- <form action="#" class="search-form">
 	                <div class="form-group">
 	                  <span class="icon icon-search"></span>
 	                  <input type="text" class="form-control" placeholder="Type a keyword and hit enter">
 	                </div>
-	              </form>
+	              </form> --}}
 	            </div>
 	            <div class="sidebar-box ftco-animate">
 	            	<h3 class="sidebar-heading">Categories</h3>
 	              <ul class="categories">
 					@foreach (\App\Category::query()->orderBy('name')->get() as $category)
-						<li><a href="#">{{ $category->name }} <span>(0)</span></a></li>
+						<li><a href="#">{{ $category->name }} <span>({{ $category->posts()->count() }})</span></a></li>
 					@endforeach
 				  </ul>
 	            </div>
 
 	            <div class="sidebar-box ftco-animate">
-	              <h3 class="sidebar-heading">Popular Topics</h3>
-	              <div class="block-21 mb-4 d-flex">
-	                <a class="blog-img mr-4" style="background-image: url({{ asset('images/user.png') }});"></a>
-	                <div class="text">
-	                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control</a></h3>
-	                  <div class="meta">
-	                    <div><a href="#"><span class="icon-calendar"></span> June 28, 2019</a></div>
-	                    <div><a href="#"><span class="icon-person"></span> Dave Lewis</a></div>
-	                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-	                  </div>
-	                </div>
-	              </div>
-	            </div>
+					<h3 class="sidebar-heading">Popular Topics</h3>
+					@foreach (App\Post::where('visibility', 0)->has('comments', '>=', '5')->limit(3)->get() as $post)
+					<div class="block-21 mb-4 d-flex">
+					  <a class="blog-img mr-4" style="background-image: url({{ asset('images/user.png') }});"></a>
+					  <div class="text">
+						<h3 class="heading"><a href="{{ route('post.show', $post->id) }}">{{ $post->title }}</a></h3>
+						<div class="meta">
+						  <div><a href="#"><span class="icon-calendar"></span> {{ $post->created_at->format('M d, Y') }}</a></div>
+						  <div><a href="#"><span class="icon-person"></span> {{ $post->user->name }} </a></div>
+						  <div><a href="#"><span class="icon-chat"></span> {{ $post->comments()->count() }} </a></div>
+						</div>
+					  </div>
+					</div>
+					@endforeach
+				</div>
 
 	          </div><!-- END COL -->
 	    		</div>
