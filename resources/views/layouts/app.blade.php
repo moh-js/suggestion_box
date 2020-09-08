@@ -41,14 +41,17 @@
   @auth
   <div id="colorlib-page">
     <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
-<aside id="colorlib-aside" role="complementary" class="js-fullheight">
-  <h1 id="" class="mb-2"><a href="{{ url('/') }}">MUST <span>OSB </span></a></h1>
+    <aside id="colorlib-aside" role="complementary" class="js-fullheight">
+        <center>
+        <img src="{{ asset('images/logo.svg') }}" width="130px" alt="logo">
+        </center>
+        <h1 id="" class="mb-1"><a href="{{ url('/') }}">MUST <span>OSB </span></a></h1>
   <div class="" style="background-color: darkgrey; padding: 10px 20px; border-radius:5px;">
     <strong>Login as: </strong> {{  auth()->user()->name }}<br>
     <strong>Role: </strong> {{ title_case(auth()->user()->getRoleNames()->first()) }}
   </div>
 
-  <nav id="colorlib-main-menu" class="mt-2" role="navigation">
+  <nav id="colorlib-main-menu" class="mt-1" role="navigation">
     <ul>
       <li class="{{ $segment_1??'colorlib-active' }}"><a href="{{ url('/') }}">Home</a></li>
 
@@ -67,7 +70,8 @@
   </nav>
 
   <div class="colorlib-footer">
-    <p class="pfooter"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+      <hr>
+    <p class="pfooter pl-2"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Mbeya University of Science and Technology <a href="https://must.ac.tz">(MUST)</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
   </div>
