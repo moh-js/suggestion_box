@@ -71,10 +71,9 @@
 
   <div class="colorlib-footer">
       <hr>
-    <p class="pfooter pl-2"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Mbeya University of Science and Technology <a href="https://must.ac.tz">(MUST)</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-  </div>
+    <p class="pfooter pl-2">Designed and Developed By <strong>
+        Charles.D.Kauta</strong> & <strong>Devis.Mosha</strong></p>
+</div>
     </aside> <!-- END COLORLIB-ASIDE -->
   @endauth
 
