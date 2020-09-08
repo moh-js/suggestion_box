@@ -6,14 +6,14 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('css/open-iconic-bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
-    
+
     <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
@@ -25,8 +25,7 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap-datepicker.css') }}">
     <link rel="stylesheet" href="{{ asset('css/jquery.timepicker.css') }}">
 
-    
-    <link rel="stylesheet" href="{{ asset('') }}">
+
     <link rel="stylesheet" href="{{ asset('css/icomoon.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
@@ -52,12 +51,12 @@
   <nav id="colorlib-main-menu" class="mt-2" role="navigation">
     <ul>
       <li class="{{ $segment_1??'colorlib-active' }}"><a href="{{ url('/') }}">Home</a></li>
-      
+
       @if (auth()->user()->hasAnyRole(['super-admin', 'admin']))
       <li class="{{ $segment_1 == 'user'? 'colorlib-active':'' }}"><a href="{{ route('user.index') }}">Users</a></li>
       <li class="{{ $segment_1 == 'category'? 'colorlib-active':'' }}"><a href="{{ route('category.index') }}">Category</a></li>
       @endif
-      
+
       <li class="{{ $segment_1 == 'post'? 'colorlib-active':'' }}"><a href="{{ route('post.index') }}">Post</a></li>
       {{-- <li class="{{ $segment_1 == 'about'? 'colorlib-active':'' }}"><a href="#">About</a></li> --}}
       <li><a href="javascript:void(0)" onclick="$('#logout').submit()">Logout</a></li>
@@ -74,7 +73,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
   </div>
     </aside> <!-- END COLORLIB-ASIDE -->
   @endauth
-        
+
 		@yield('content')
 	</div><!-- END COLORLIB-PAGE -->
 

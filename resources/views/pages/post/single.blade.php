@@ -20,7 +20,7 @@
 		              </div>
 		            </div>
 		            
-		            <div class="about-author d-flex p-4 bg-light">
+		            {{-- <div class="about-author d-flex p-4 bg-light">
 		              <div class="bio mr-5">
 		                <img src="{{ asset('images/user.png') }}" alt="Image placeholder" class="img-fluid mb-4">
 		              </div>
@@ -28,7 +28,7 @@
 		                <h3>{{ $post->user->name }}</h3>
 		                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
 		              </div>
-		            </div>
+		            </div> --}}
 
 
 		            <div class="pt-5 mt-5">

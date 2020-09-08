@@ -1,10 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mt-5">
+<div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
+        <div class="col-md-6 mt-3">
+            <center>
+                <img class="image-container" src="{{ asset('images/logo.svg') }}" width="200" alt="LOGO">
+            </center>
+            <p class="text-center">Welcome to OSB</p>
+            <div class="card mt-1">
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
